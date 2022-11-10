@@ -1,5 +1,8 @@
 <?php
 $url="https://zipcloud.ibsnet.co.jp/api/search?zipcode=".(int)$_GET["zip"];
 $response=file_get_contents($url);
-var_dump($response);
+$response=json_decode($response,true);
+echo $response["results"][0]["address1"];
+echo $response["results"][0]["address2"];
+echo $response["results"][0]["address3"];
 ?>
