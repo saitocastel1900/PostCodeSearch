@@ -1,12 +1,12 @@
 <?php
-$zip=$_GET["zip"];
+
 //nullチェック
-if(!isset($zip))
+if(!isset($_GET["zip"]))
 {
     echo "郵便番号を入力してください";
     exit;
 }else{
-    $flag=preg_match("/\A\d{7}\z/u",$zip);
+    $flag=preg_match("/\A\d{7}\z/u",(int)$_GET["zip"]);
 }
 
 //7桁で入力してないかもなので分岐させる
